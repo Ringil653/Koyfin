@@ -46,3 +46,25 @@ def login_to_koyfin():
     pyautogui.doubleClick(1892, 125)
     print("Login finalized")
     pyautogui.press('f11')
+
+
+def loc_xpath_values(id_number):
+    """The function iterates over info categories and creates dict with xpath values for each searched webpage element"""
+    temp_dict = {}
+    for key, value in info_categories.items():
+        try:
+            page_value = driver.find_element(By.XPATH, value).text
+        except NoSuchElementException:
+            page_value = 0
+        temp_dict[key] = page_value
+        #print(key, page_value)
+    for cat in fin_categories:
+        for key, value in dict_periods.items():
+            xpath_loc = f'//*[@id="{id_number}"]/div[{cat[1]}]/div/div[last()-{value}]/div/div/div'
+            try:
+                page_value = driver.find_element(By.XPATH, xpath_loc).text
+            except NoSuchElementException:
+                page_value = 0
+            temp_dict[cat[0] + key] = page_value
+            #print(cat[0], key, page_value)
+    list_company_data.append(temp_dict)
