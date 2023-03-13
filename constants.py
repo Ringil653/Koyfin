@@ -8,13 +8,15 @@ fin_categories = (
 )
 
 info_categories = {
+    "ticker": '//*[@id="root"]/div[1]/section/div[2]/div[2]/div[1]/div[1]/div[1]/div/div/div[2]/div[1]/div/div[1]/span',
     "name": '//*[@id="root"]/div[1]/section/div[2]/div[2]/div[1]/div[1]/div[1]/div/div/div[1]/div[1]/div[1]',
     "earnings_date": '//*[@id="quote-box-tab_i_0"]/div/div[1]/div/div',
     "sector": '//*[@id="quote-box-tab_i_1"]/div/div[1]/div/div',
     "industry": '//*[@id="quote-box-tab_i_2"]/div/div[1]/div/div',
-    "last_rep_date": '//*[@id="root"]/div[1]/section/div[2]/div[2]/div[1]/div[1]/div[2]/div/div[4]/div/div/div[1]/div[22]/div/div/div[2]',
+    "last_rep_date": '//*[@id="root"]/div[1]/section/div[2]/div[2]/div[1]/div[1]/div[2]/div/div[4]/div/div/div[1]/div[last()-1]/div/div/div[2]',
     "cur_evebitda": '//*[@id="quote-box-tab_i_5"]/div/div[1]/div/div',
-    "cur_pe": '//*[@id="quote-box-tab_i_6"]/div/div[1]/div/div'
+    "cur_pe": '//*[@id="quote-box-tab_i_6"]/div/div[1]/div/div',
+    "forward_pe": '//*[@id="quote-box-tab_i_4"]/div/div[1]/div/div'
 }
 
 dict_periods = {
